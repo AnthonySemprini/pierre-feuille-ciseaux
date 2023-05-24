@@ -7,7 +7,7 @@ let opierreBtn = document.getElementById("opierre");
 let ofeuilleBtn = document.getElementById("ofeuille");
 let ociseauxBtn = document.getElementById("ociseaux");
 let message = document.getElementById("message");
-let nextBtn = document.getElementsByClassName("next");
+let nextBtn = document.getElementById("next");
 
 //logique
 const jouerManche = (e) => {
@@ -18,7 +18,7 @@ const jouerManche = (e) => {
     btn.removeEventListener("click", jouerManche);
     });
 
-    choix.classList.remove("desctivated");
+    choix.classList.remove("desactivated");
     choix.classList.add("active");
 
     let choixJoueur = choix.id;
@@ -26,8 +26,10 @@ const jouerManche = (e) => {
     let choixOrdi = faireChoixOrdinateur();
 
     verifierGagnant(choixJoueur, choixOrdi);
+
     nextBtn.style.visibility = "visible";
 };
+
 const PIERRE = "pierre";
 const FEUILLE = "feuille";
 const CISEAUX = "ciseaux";
@@ -38,17 +40,18 @@ const faireChoixOrdinateur = () => {
     // 2 = ciseaux
 
     let nbAleatoire = Math.floor(Math.random() *3);
+
     switch(nbAleatoire){
         case 0:
-            opierre.classList.add("active");
+            opierreBtn.classList.add("active");
             return PIERRE;
 
         case 1:
-            ofeuille.classList.add("active");
+            ofeuilleBtn.classList.add("active");
             return FEUILLE;
 
-        case 2:
-            ociseaux.classList$.add("active");
+        default:
+            ociseauxBtn.classList.add("active");
             return CISEAUX;
  }
 };
@@ -61,21 +64,21 @@ const verifierGagnant = (choixJoueur, choixOrdi) => {
 
     if(choixJoueur == PIERRE){
         if(choixOrdi == FEUILLE){
-            return victoirOrdinateur();
+            return victoireOrdinateur();
         }else if(choixOrdi == CISEAUX){
             return victoireJoueur();
         }
     }
     if(choixJoueur == FEUILLE){
         if(choixOrdi == CISEAUX){
-            return victoirOrdinateur();
+            return victoireOrdinateur();
         }else if(choixOrdi == PIERRE){
             return victoireJoueur();
         }
     }
     if(choixJoueur == CISEAUX){
         if(choixOrdi == PIERRE){
-            return victoirOrdinateur();
+            return victoireOrdinateur();
         }else if(choixOrdi == FEUILLE){
             return victoireJoueur();
         }
