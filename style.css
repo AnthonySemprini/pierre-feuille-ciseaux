@@ -1,12 +1,12 @@
 :root {
     --primary: #00d9ff;
     --secondary: #ff8800;
-    --back: #f1f1f1;
+    --back: #d7d3d3;
     --action: #ff6565;
     --border-radius: 15px;
     --btn-padding: 20px;
 }
-
+/* #00d9ff */
 * {
     margin: 0;
     padding: 0;
@@ -33,16 +33,28 @@ body {
     background-color: white;
     padding: var(--btn-padding);
     border-radius: 15px;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 }
 
 #reset {
+    
     font-size: 12px;
     grid-column: span 2;
     cursor: pointer;
+    color: var(--action);
+    border: 2px var(--action) solid;
+    border-radius: 15px;
+    padding: 5px;
+    margin-left: 175px;
+    margin-right: 175px;
 }
 
 #reset:hover {
-    color: var(--action);
+    color: var(--back);
+    background-color: var(--action);
+   transition: 0.5s;
 }
 
 .action {
@@ -96,6 +108,9 @@ body {
 .btn-joueur {
     cursor: pointer;
     background-color: white;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 }
 
 .btn-joueur:hover {

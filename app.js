@@ -86,11 +86,11 @@ const verifierGagnant = (choixJoueur, choixOrdi) => {
 };
 
 const victoireOrdinateur = () => {
-    message.textContent = "L'ordinateur gagne ...";
+    message.textContent = "Perdu :(";
     scoreOrdinateur.textContent++;
 };
 const victoireJoueur = () => {
-    message.textContent = "Vous avez gagné :)";
+    message.textContent = "Tu as gagné :)";
     scorejoueur.textContent++;
 };
 const preparerNouvelleManche = () => {
@@ -107,7 +107,7 @@ const preparerNouvelleManche = () => {
         ofeuilleBtn.classList.remove("active");
         ociseauxBtn.classList.remove("active");
 
-        message.textContent = "A vous de jouer !";
+        message.textContent = "A toi de jouer !";
     
 };
 
